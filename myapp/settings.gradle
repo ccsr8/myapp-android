@@ -1,0 +1,27 @@
+List<Module> myModuleList = new ArrayList<>()
+myModuleList.with {
+    add(new Module(name: ":app", path: ":app"))
+
+    // libraries
+    add(new Module(name: ":libraries:lib-actions", path: "libraries/actions"))
+}
+myModuleList.forEach {
+    addProject(it.getName(), it.getPath())
+}
+
+void addProject(String name, String path) {
+    include name
+    if (path != null) {
+        if (path == ":app") {
+            project(name).projectDir = new File('app')
+        } else {
+            project(name).projectDir = new File(settingsDir, path)
+        }
+    }
+}
+
+class Module {
+    String name
+    String path
+}
+
