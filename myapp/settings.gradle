@@ -3,7 +3,7 @@ myModuleList.with {
     add(new Module(name: ":app", path: ":app"))
 
     // libraries
-    add(new Module(name: ":libraries:lib-actions", path: "libraries/actions"))
+    add(new Module(name: ":libraries-actions", path: "libraries/actions"))
 }
 myModuleList.forEach {
     addProject(it.getName(), it.getPath())
