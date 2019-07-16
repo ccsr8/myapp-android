@@ -17,6 +17,7 @@ buildscript {
             "junit": "4.12",
             "test_runner": "1.2.0",
             "espresso_core": "3.2.0",
+            "javaVersion": JavaVersion.VERSION_1_8
     ]
 
     ext.deps = [
@@ -51,6 +52,31 @@ allprojects {
 
     }
 }
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            //apply plugin: "com.github.ben-manes.versions"
+
+            android {
+                //buildToolsVersion Config.buildTools
+                compileSdkVersion versions.compile_sdk
+
+                defaultConfig {
+                    minSdkVersion versions.min_sdk
+                    targetSdkVersion versions.target_sdk
+                    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                }
+
+                compileOptions {
+                    sourceCompatibility versions.javaVersion
+                    targetCompatibility versions.javaVersion
+                }
+            }
+        }
+    }
+}
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir
