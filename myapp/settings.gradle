@@ -4,6 +4,7 @@ myModuleList.with {
 
     // libraries
     add(new Module(name: ":libraries-actions", path: "libraries/actions"))
+    add(new Module(name: ":libraries-ui_components", path: "libraries/ui_components"))
 }
 myModuleList.forEach {
     addProject(it.getName(), it.getPath())
