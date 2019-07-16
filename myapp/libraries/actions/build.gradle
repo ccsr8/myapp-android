@@ -2,9 +2,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
-//androidExtensions {
-//    experimental = true
-//}
+androidExtensions {
+    experimental = true
+}
 
 dependencies {
     implementation deps.androidx_core_ktx
