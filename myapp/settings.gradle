@@ -1,5 +1,5 @@
-List<Module> myModuleList = new ArrayList<>()
-myModuleList.with {
+List<Module> moduleList = new ArrayList<>()
+moduleList.with {
     add(new Module(name: ":app", path: ":app"))
 
     // libraries
@@ -9,7 +9,7 @@ myModuleList.with {
     // features
     add(new Module(name: ":features-login", path: "features/login"))
 }
-myModuleList.forEach {
+moduleList.forEach {
     addProject(it.getName(), it.getPath())
 }
 
