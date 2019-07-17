@@ -18,9 +18,10 @@ android {
 }
 
 dependencies {
+    implementation project(':features-login')
+
     implementation project(':libraries-ui_components')
     implementation project(':libraries-actions')
-    implementation project(':features-login')
 
     implementation deps.kotlin_stdlib
     implementation deps.androidx_appcompat
