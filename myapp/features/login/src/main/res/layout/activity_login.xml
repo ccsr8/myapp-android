@@ -8,4 +8,4 @@
           android:name="androidx.navigation.fragment.NavHostFragment"
           app:navGraph="@navigation/login_graph"
           app:defaultNavHost="true"
-          tools:context=".MainActivity"/>
+          tools:context=".LoginActivity"/>

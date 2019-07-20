@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="myapp.features.login">
+          package="myapp.features.dashboard">
 
     <application>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".DashboardActivity">
             <intent-filter>
-                <action android:name="com.example.myapp.login.open"></action>
+                <action android:name="com.example.myapp.dashboard.open"></action>
                 <category android:name="android.intent.category.DEFAULT"></category>
             </intent-filter>
         </activity>

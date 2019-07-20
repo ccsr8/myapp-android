@@ -8,6 +8,7 @@ moduleList.with {
 
     // features
     add(new Module(name: ":features-login", path: "features/login"))
+    add(new Module(name: ":features-dashboard", path: "features/dashboard"))
 }
 moduleList.forEach {
     addProject(it.getName(), it.getPath())

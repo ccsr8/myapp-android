@@ -25,9 +25,10 @@ class AvatarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*avatarNextButton.setOnClickListener {
-            activity!!.startActivity(Actions.openLoginIntent(context!!))
-        }*/
+        avatarNextButton.setOnClickListener {
+            activity!!.startActivity(Actions.openDashboardIntent(context!!))
+            //startActivity(Actions.openDashboardIntent(context!!))
+        }
     }
 
     //endregion

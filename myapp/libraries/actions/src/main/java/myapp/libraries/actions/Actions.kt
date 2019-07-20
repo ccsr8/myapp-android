@@ -9,6 +9,8 @@ object Actions {
 
     fun openLoginIntent(context: Context) = internalIntent(context, "com.example.myapp.login.open")
 
+    fun openDashboardIntent(context: Context) = internalIntent(context, "com.example.myapp.dashboard.open")
+
     //endregion
 
     //region [private methods]
