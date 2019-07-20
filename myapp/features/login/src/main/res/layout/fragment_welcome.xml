@@ -15,11 +15,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
     <Button
-            android:text="Next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/welcomeNextButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView" android:text="@string/next_button"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
