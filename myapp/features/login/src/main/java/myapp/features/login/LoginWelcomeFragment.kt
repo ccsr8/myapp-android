@@ -1,16 +1,14 @@
 package myapp.features.login
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_login_welcome.*
 
-
-class LoginFragment : Fragment() {
+class LoginWelcomeFragment : Fragment() {
 
     //region [event handlers]
 
@@ -19,14 +17,14 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_login_welcome, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loginNextButton.setOnClickListener {
-            view.findNavController().navigate(R.id.action_loginFragment_to_avatarFragment)
+        welcomeNextButton.setOnClickListener {
+            view.findNavController().navigate(R.id.action_welcomeFragment_to_loginFragment)
         }
     }
 

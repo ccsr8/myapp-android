@@ -6,23 +6,23 @@
             app:startDestination="@id/welcomeFragment">
 
     <fragment android:id="@+id/welcomeFragment"
-              android:name="myapp.features.login.WelcomeFragment"
-              tools:layout="@layout/fragment_welcome"
+              android:name="myapp.features.login.LoginWelcomeFragment"
+              tools:layout="@layout/fragment_login_welcome"
               android:label="WelcomeFragment">
         <action android:id="@+id/action_welcomeFragment_to_loginFragment"
                 app:destination="@id/loginFragment"/>
     </fragment>
 
     <fragment android:id="@+id/loginFragment"
-              android:name="myapp.features.login.LoginFragment"
-              tools:layout="@layout/fragment_login"
+              android:name="myapp.features.login.LoginAuthenticationFragment"
+              tools:layout="@layout/fragment_login_authentication"
               android:label="LoginFragment">
         <action android:id="@+id/action_loginFragment_to_avatarFragment"
                 app:destination="@id/avatarFragment"/>
     </fragment>
 
     <fragment android:id="@+id/avatarFragment"
-              android:name="myapp.features.login.AvatarFragment"
-              tools:layout="@layout/fragment_avatar"
+              android:name="myapp.features.login.LoginAvatarFragment"
+              tools:layout="@layout/fragment_login_avatar"
               android:label="AvatarFragment"/>
 </navigation>

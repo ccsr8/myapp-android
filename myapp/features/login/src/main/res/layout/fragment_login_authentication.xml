@@ -5,12 +5,14 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AvatarFragment" android:id="@+id/container">
+        tools:context=".LoginAuthenticationFragment" android:id="@+id/container">
+
+
     <TextView
-            android:text="Avatar"
+            android:text="Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/textView2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -19,8 +21,8 @@
             android:text="@string/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/avatarNextButton"
+            android:id="@+id/loginNextButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
