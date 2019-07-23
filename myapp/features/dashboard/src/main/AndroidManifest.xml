@@ -3,7 +3,7 @@
           package="myapp.features.dashboard">
 
     <application>
-        <activity android:name=".DashboardActivity">
+        <activity android:name=".DashboardMainActivity">
             <intent-filter>
                 <action android:name="com.example.myapp.dashboard.open"></action>
                 <category android:name="android.intent.category.DEFAULT"></category>
