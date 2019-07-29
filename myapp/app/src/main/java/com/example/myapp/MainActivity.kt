@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_main)
 
-        startActivity(Actions.openLoginIntent(this))
+        startActivity(Actions.openDashboardIntent(this))
     }
 }
