@@ -8,8 +8,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_main)
+        this.setContentView(R.layout.activity_main)
 
-        startActivity(Actions.openDashboardIntent(this))
+        this.startActivity(Actions.openDashboardIntent(this))
     }
 }
