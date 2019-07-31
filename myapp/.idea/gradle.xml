@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/features/dashboard" />
             <option value="$PROJECT_DIR$/features/login" />
             <option value="$PROJECT_DIR$/libraries/actions" />
+            <option value="$PROJECT_DIR$/libraries/appdb" />
             <option value="$PROJECT_DIR$/libraries/ui_components" />
           </set>
         </option>

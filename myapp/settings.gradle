@@ -5,6 +5,7 @@ moduleList.with {
     // libraries
     add(new Module(name: ":libraries-actions", path: "libraries/actions"))
     add(new Module(name: ":libraries-ui_components", path: "libraries/ui_components"))
+    add(new Module(name: ":libraries-appdb", path: "libraries/appdb"))
 
     // features
     add(new Module(name: ":features-login", path: "features/login"))
