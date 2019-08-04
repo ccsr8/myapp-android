@@ -1,2 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="myapp.libraries.appdb"/>
+          package="myapp.libraries.appdb">
+
+    <application>
+        <activity android:name=".AppdbMainActivity">
+        </activity>
+    </application>
+
+</manifest>
