@@ -3,6 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+android {
+    dataBinding {
+        enabled true
+    }
+}
+
 dependencies {
     implementation project(':libraries-ui_components')
     implementation project(':libraries-actions')
@@ -14,6 +20,7 @@ dependencies {
     implementation deps.androidx_navigation_fragment
     implementation deps.androidx_navigation_ui
 
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation deps.junit
 
     androidTestImplementation deps.test_runner
