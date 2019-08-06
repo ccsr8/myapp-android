@@ -1,4 +1,4 @@
 package myapp.libraries.appdb.data.source
 
-interface AppRepository {
+interface AppConfigDatasource {
 }

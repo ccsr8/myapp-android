@@ -1,12 +1,18 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 androidExtensions {
     experimental = true
 }
 
 dependencies {
+
     implementation deps.androidx_core_ktx
+    implementation "androidx.room:room-runtime:${versions.androidx_room}"
+    kapt "androidx.room:room-compiler:${versions.androidx_room}"
+    implementation "androidx.room:room-ktx:${versions.androidx_room}"
+
     testImplementation deps.junit
 }
