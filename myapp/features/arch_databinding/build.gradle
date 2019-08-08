@@ -20,6 +20,7 @@ dependencies {
     implementation deps.androidx_navigation_fragment
     implementation deps.androidx_navigation_ui
 
+    implementation deps.androidx_legacy_support
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation deps.junit
 
