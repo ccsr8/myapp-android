@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_main)
 
-        this.startActivity(Actions.openDashboardIntent(this))
+        this.startActivity(Actions.openDataBindingIntent(this))
     }
 }
