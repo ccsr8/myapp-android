@@ -21,6 +21,7 @@ android {
 dependencies {
     implementation project(':features-login')
     implementation project(':features-dashboard')
+    implementation project(':features-arch_databinding')
 
     implementation project(':libraries-ui_components')
     implementation project(':libraries-actions')
