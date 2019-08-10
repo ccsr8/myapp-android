@@ -13,12 +13,16 @@ dependencies {
     implementation project(':libraries-ui_components')
     implementation project(':libraries-actions')
 
-    implementation deps.kotlin_stdlib
+    implementation deps.kotlin.stdlib
     implementation deps.androidx_appcompat
     implementation deps.androidx_core_ktx
     implementation deps.androidx_constraintlayout
-    implementation deps.androidx_navigation_fragment
-    implementation deps.androidx_navigation_ui
+    implementation deps.androidxNavigation.fragment
+    implementation deps.androidxNavigation.ui
+
+    implementation deps.androidxLifecycle.extensions
+    kapt deps.androidxLifecycle.compiler
+    implementation deps.androidxLifecycle.viewmodel
 
     implementation deps.androidx_legacy_support
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -26,5 +30,5 @@ dependencies {
 
     androidTestImplementation deps.test_runner
     androidTestImplementation deps.espresso_core
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
 }

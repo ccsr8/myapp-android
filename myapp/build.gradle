@@ -24,26 +24,34 @@ buildscript {
     ]
 
     ext.deps = [
-            "androidx_appcompat"           : "androidx.appcompat:appcompat:${versions.androidx_appcompat}",
-            "androidx_core_ktx"            : "androidx.core:core-ktx:${versions.androidx_core_ktx}",
-            "androidx_constraintlayout"    : "androidx.constraintlayout:constraintlayout:${versions.androidx_constraintlayout}",
-            "androidx_navigation_fragment" : "androidx.navigation:navigation-fragment-ktx:${versions.androidx_navigation}",
-            "androidx_navigation_ui"       : "androidx.navigation:navigation-ui-ktx:${versions.androidx_navigation}",
-            "androidx_legacy_support"      : "androidx.legacy:legacy-support-v4:${versions.androidx_legacy_support}",
-            "androidx_lifecycle_extensions": "androidx.lifecycle:lifecycle-extensions:${versions.androidx_lifecycle}",
-            "androidx_lifecycle_compiler"  : "androidx.lifecycle:ifecycle-compiler:${versions.androidx_lifecycle}",
+            "androidx_appcompat"       : "androidx.appcompat:appcompat:${versions.androidx_appcompat}",
+            "androidx_core_ktx"        : "androidx.core:core-ktx:${versions.androidx_core_ktx}",
+            "androidx_constraintlayout": "androidx.constraintlayout:constraintlayout:${versions.androidx_constraintlayout}",
+            "androidx_legacy_support"  : "androidx.legacy:legacy-support-v4:${versions.androidx_legacy_support}",
 
-            "androidx_room_runtime"        : "androidx.room:room-runtime:${versions.androidx_room}",
-            "androidx_room_compiler"       : "androidx.room:room-compiler:${versions.androidx_room}",
-            "androidx_room_ktx"            : "androidx.room:room-ktx:${versions.androidx_room}",
+            "junit"                    : "junit:junit:${versions.junit}",
+            "test_runner"              : "androidx.test:runner:${versions.test_runner}",
+            "espresso_core"            : "androidx.test.espresso:espresso-core:${versions.espresso_core}",
 
-            "gradle"                       : "com.android.tools.build:gradle:${versions.gradle}",
-            "kotlin_gradle_plugin"         : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
-            "kotlin_stdlib"                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
-
-            "junit"                        : "junit:junit:${versions.junit}",
-            "test_runner"                  : "androidx.test:runner:${versions.test_runner}",
-            "espresso_core"                : "androidx.test.espresso:espresso-core:${versions.espresso_core}",
+            'kotlin'                   : [
+                    'stdlib'      : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+                    'test'        : "org.jetbrains.kotlin:kotlin-test-common:${versions.kotlin}",
+                    'gradlePlugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+            ],
+            'androidxRoom'             : [
+                    'runtime' : "androidx.room:room-runtime:${versions.androidx_room}",
+                    'compiler': "androidx.room:room-compiler:${versions.androidx_room}",
+                    'ktx'     : "androidx.room:room-ktx:${versions.androidx_room}"
+            ],
+            'androidxLifecycle'        : [
+                    'extensions': "androidx.lifecycle:lifecycle-extensions:${versions.androidx_lifecycle}",
+                    'compiler'  : "androidx.lifecycle:lifecycle-compiler:${versions.androidx_lifecycle}",
+                    'viewmodel' : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidx_lifecycle}"
+            ],
+            'androidxNavigation'       : [
+                    'fragment': "androidx.navigation:navigation-fragment-ktx:${versions.androidx_navigation}",
+                    'ui'      : "androidx.navigation:navigation-ui-ktx:${versions.androidx_navigation}"
+            ]
     ]
 
     repositories {
@@ -52,8 +60,8 @@ buildscript {
 
     }
     dependencies {
-        classpath deps.gradle
-        classpath deps.kotlin_gradle_plugin
+        classpath "com.android.tools.build:gradle:${versions.gradle}"
+        classpath deps.kotlin.gradlePlugin
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
