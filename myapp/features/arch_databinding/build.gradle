@@ -24,6 +24,8 @@ dependencies {
     kapt deps.androidxLifecycle.compiler
     implementation deps.androidxLifecycle.viewmodel
 
+    implementation deps.androidxFragment.fragmentKtx
+
     implementation deps.androidx_legacy_support
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation deps.junit

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProviders
 import myapp.features.arch_databinding.data.SimpleViewModel
 import myapp.features.arch_databinding.databinding.FragmentDataBinding2ViewModelBinding
@@ -16,9 +17,11 @@ class DataBinding2ViewModelFragment : Fragment() {
 
     //region [private memebers]
 
-    private val viewModel by lazy {
+    /*private val viewModel by lazy {
         ViewModelProviders.of(this).get(SimpleViewModel::class.java)
-    }
+    }*/
+
+    private val viewModel by viewModels<SimpleViewModel>()
 
     //endregion
 
