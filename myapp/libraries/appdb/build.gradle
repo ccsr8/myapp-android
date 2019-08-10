@@ -9,11 +9,11 @@ androidExtensions {
 
 dependencies {
 
-    implementation deps.androidx_core_ktx
+    implementation deps.androidx.coreKtx
     implementation deps.kotlin.stdlib
-    implementation deps.androidxRoom.runtime
-    kapt deps.androidxRoom.compiler
-    implementation deps.androidxRoom.ktx
+    implementation deps.androidx.roomRuntime
+    kapt deps.androidx.roomCompiler
+    implementation deps.androidx.roomKtx
 
     testImplementation deps.junit
 }

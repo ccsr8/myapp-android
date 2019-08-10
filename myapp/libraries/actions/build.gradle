@@ -7,6 +7,6 @@ androidExtensions {
 }
 
 dependencies {
-    implementation deps.androidx_core_ktx
+    implementation deps.androidx.coreKtx
     testImplementation deps.junit
 }

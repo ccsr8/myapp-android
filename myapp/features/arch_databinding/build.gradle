@@ -14,20 +14,19 @@ dependencies {
     implementation project(':libraries-actions')
 
     implementation deps.kotlin.stdlib
-    implementation deps.androidx_appcompat
-    implementation deps.androidx_core_ktx
-    implementation deps.androidx_constraintlayout
-    implementation deps.androidxNavigation.fragment
-    implementation deps.androidxNavigation.ui
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.coreKtx
+    implementation deps.androidx.constraintlayout
+    implementation deps.androidx.navigationFragment
+    implementation deps.androidx.navigationUi
 
-    implementation deps.androidxLifecycle.extensions
-    kapt deps.androidxLifecycle.compiler
-    implementation deps.androidxLifecycle.viewmodel
+    implementation deps.androidx.lifecycleExtensions
+    kapt deps.androidx.lifecycleCompiler
+    implementation deps.androidx.lifecycleViewmodel
 
-    implementation deps.androidxFragment.fragmentKtx
+    implementation deps.androidx.fragmentKtx
 
-    implementation deps.androidx_legacy_support
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation deps.androidx.legacySupport
     testImplementation deps.junit
 
     androidTestImplementation deps.test_runner

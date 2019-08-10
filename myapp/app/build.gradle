@@ -30,9 +30,9 @@ dependencies {
     implementation project(':libraries-actions')
 
     implementation deps.kotlin.stdlib
-    implementation deps.androidx_appcompat
-    implementation deps.androidx_core_ktx
-    implementation deps.androidx_constraintlayout
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.coreKtx
+    implementation deps.androidx.constraintlayout
 
     testImplementation deps.junit
 
