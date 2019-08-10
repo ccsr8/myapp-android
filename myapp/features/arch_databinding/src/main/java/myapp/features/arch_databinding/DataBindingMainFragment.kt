@@ -26,6 +26,10 @@ class DataBindingMainFragment : Fragment() {
         bindingStringButton.setOnClickListener {
             view.findNavController().navigate(R.id.action_dataBindingMainFragment2_to_dataBinding1StringFragment2)
         }
+
+        bindingViewModelButton.setOnClickListener {
+            view.findNavController().navigate(R.id.action_dataBindingMainFragment2_to_dataBinding2ViewModelFragment)
+        }
     }
 
     //endregion
