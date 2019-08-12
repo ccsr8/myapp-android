@@ -11,6 +11,7 @@ moduleList.with {
     add(new Module(name: ":features-login", path: "features/login"))
     add(new Module(name: ":features-dashboard", path: "features/dashboard"))
     add(new Module(name: ":features-arch_databinding", path: "features/arch_databinding"))
+    add(new Module(name: ":features-arch_roomword", path: "features/arch_roomword"))
 }
 moduleList.forEach {
     addProject(it.getName(), it.getPath())
