@@ -15,7 +15,7 @@ import myapp.features.arch_databinding.databinding.FragmentDataBinding2ViewModel
 
 class DataBinding2ViewModelFragment : Fragment() {
 
-    //region [private memebers]
+    //region [private members]
 
     /*private val viewModel by lazy {
         ViewModelProviders.of(this).get(SimpleViewModel::class.java)
@@ -31,8 +31,6 @@ class DataBinding2ViewModelFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //return inflater.inflate(R.layout.fragment_data_binding2_view_model, container, false)
-
         var binding : FragmentDataBinding2ViewModelBinding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_data_binding2_view_model,
