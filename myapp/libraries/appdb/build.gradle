@@ -11,6 +11,8 @@ dependencies {
 
     implementation deps.androidx.coreKtx
     implementation deps.kotlin.stdlib
+
+    // Room
     implementation deps.androidx.roomRuntime
     kapt deps.androidx.roomCompiler
     implementation deps.androidx.roomKtx

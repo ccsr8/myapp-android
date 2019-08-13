@@ -1,4 +1,4 @@
-package myapp.features.roomword;
+package myapp.features.arch_room;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package myapp.features.roomword;
+package myapp.features.arch_room;
 
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("myapp.features.roomword.test", appContext.getPackageName());
+        assertEquals("myapp.features.arch_room.test", appContext.getPackageName());
     }
 }
