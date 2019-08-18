@@ -5,7 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <view class="androidx.appcompat.app.AlertController$RecycleListView"
+    <androidx.recyclerview.widget.RecyclerView
           android:id="@+id/recycleView"
           android:background="@android:color/darker_gray"
           android:layout_width="match_parent"
