@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_main)
 
-        this.startActivity(Actions.openDataBindingIntent(this))
+        this.startActivity(Actions.openRoomIntent(this))
     }
 }
