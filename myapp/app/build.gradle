@@ -36,6 +36,16 @@ dependencies {
     implementation deps.androidx.coreKtx
     implementation deps.androidx.constraintlayout
 
+    // Lifecycle
+    implementation deps.androidx.lifecycleExtensions
+    kapt deps.androidx.lifecycleCompiler
+    implementation deps.androidx.lifecycleViewmodel
+
+    // Room
+    implementation deps.androidx.roomRuntime
+    kapt deps.androidx.roomCompiler
+    implementation deps.androidx.roomKtx
+
     testImplementation deps.junit
 
     androidTestImplementation deps.test_runner
