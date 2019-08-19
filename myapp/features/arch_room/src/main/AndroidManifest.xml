@@ -3,10 +3,13 @@
           package="myapp.features.arch_room">
 
     <application>
+        <activity android:name=".RoomNewWordActivity">
+        </activity>
         <activity android:name=".RoomMainActivity">
             <intent-filter>
-                <action android:name="com.example.myapp.room.open"></action>
-                <category android:name="android.intent.category.DEFAULT"></category>
+                <action android:name="com.example.myapp.room.open"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
     </application>

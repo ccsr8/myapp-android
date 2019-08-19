@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Database(entities = [Word::class], version = 1)
-public abstract class WordRoomDatabase : RoomDatabase() {
+abstract class WordRoomDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
 
@@ -53,7 +53,6 @@ public abstract class WordRoomDatabase : RoomDatabase() {
                     }
                 }
             }
-
         }
 
         suspend fun populateDatabase(wordDao: WordDao) {
