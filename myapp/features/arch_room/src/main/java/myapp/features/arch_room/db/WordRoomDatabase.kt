@@ -17,10 +17,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: WordRoomDatabase? = null
 
-        fun getDatabase(
-            context: Context,
-            scope: CoroutineScope
-        ): WordRoomDatabase {
+        fun getDatabase(context: Context, scope: CoroutineScope): WordRoomDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
@@ -40,9 +37,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
             }
         }
 
-        private class WordDatabaseCallBack(
-            private val scope: CoroutineScope
-        ) : RoomDatabase.Callback() {
+        private class WordDatabaseCallBack(private val scope: CoroutineScope) : RoomDatabase.Callback() {
 
             override fun onOpen(db: SupportSQLiteDatabase) {
                 super.onOpen(db)
