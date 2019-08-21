@@ -12,15 +12,18 @@ class WordListAdapter internal constructor(
     context: Context
 ) : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
 
+    //region [private members]
+
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var words = emptyList<Word>()
 
-    inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val wordItemView: TextView = itemView.findViewById(R.id.textView)
-    }
+    //endregion
+
+    //region [event handlers]
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
         val itemView = inflater.inflate(R.layout.recyclerview_item, parent, false)
+
         return WordViewHolder(itemView)
     }
 
@@ -29,13 +32,27 @@ class WordListAdapter internal constructor(
         holder.wordItemView.text = current.word
     }
 
+    //endregion
+
+    //region [properties]
+
+    override fun getItemCount(): Int {
+        return words.size
+    }
+
+    //endregion
+
+    //region [public methods]
+
     internal fun setWords(words: List<Word>) {
         this.words = words
         notifyDataSetChanged()
     }
 
-    override fun getItemCount(): Int {
-        return words.size
+    //endregion
+
+    inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val wordItemView: TextView = itemView.findViewById(R.id.textView)
     }
 
 }

@@ -72,7 +72,7 @@ class RoomMainActivity : AppCompatActivity() {
 
     //endregion
 
-    companion object {
-        const val newWordActivityRequestCode = 1
+    internal companion object {
+        private const val newWordActivityRequestCode = 1
     }
 }

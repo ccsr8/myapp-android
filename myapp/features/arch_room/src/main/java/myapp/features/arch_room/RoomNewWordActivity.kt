@@ -33,7 +33,7 @@ class RoomNewWordActivity : AppCompatActivity() {
         }
     }
 
-    companion object {
-        const val EXTRA_REPLY = "myapp.features.arch_room.newword.REPLY"
+    internal companion object {
+        internal const val EXTRA_REPLY = "myapp.features.arch_room.newword.REPLY"
     }
 }
