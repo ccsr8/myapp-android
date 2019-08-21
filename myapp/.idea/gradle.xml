@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/features/arch_databinding" />
+            <option value="$PROJECT_DIR$/features/arch_room" />
             <option value="$PROJECT_DIR$/features/dashboard" />
             <option value="$PROJECT_DIR$/features/login" />
             <option value="$PROJECT_DIR$/libraries/actions" />

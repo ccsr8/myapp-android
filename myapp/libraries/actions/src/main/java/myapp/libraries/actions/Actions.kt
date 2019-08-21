@@ -11,6 +11,10 @@ object Actions {
 
     fun openDashboardIntent(context: Context) = internalIntent(context, "com.example.myapp.dashboard.open")
 
+    fun openDataBindingIntent(context: Context) = internalIntent(context, "com.example.myapp.databinding.open")
+
+    fun openRoomIntent(context: Context) = internalIntent(context, "com.example.myapp.room.open")
+
     //endregion
 
     //region [private methods]

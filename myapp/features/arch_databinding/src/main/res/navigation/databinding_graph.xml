@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/databinding_graph"
+            app:startDestination="@id/dataBindingMainFragment2">
+    <fragment android:id="@+id/dataBindingMainFragment2"
+              android:name="myapp.features.arch_databinding.DataBindingMainFragment"
+              android:label="fragment_data_binding_main" tools:layout="@layout/fragment_data_binding_main">
+        <action android:id="@+id/action_dataBindingMainFragment2_to_dataBinding1StringFragment2"
+                app:destination="@id/dataBinding1StringFragment2"/>
+        <action android:id="@+id/action_dataBindingMainFragment2_to_dataBinding2ViewModelFragment"
+                app:destination="@id/dataBinding2ViewModelFragment"/>
+    </fragment>
+    <fragment android:id="@+id/dataBinding1StringFragment2"
+              android:name="myapp.features.arch_databinding.DataBinding1StringFragment"
+              android:label="DataBinding1StringFragment"/>
+    <fragment android:id="@+id/dataBinding2ViewModelFragment"
+              android:name="myapp.features.arch_databinding.DataBinding2ViewModelFragment"
+              android:label="DataBinding2ViewModelFragment"/>
+</navigation>
