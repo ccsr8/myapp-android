@@ -4,6 +4,10 @@
 
     <application>
         <activity android:name=".DataBindingMainActivity">
+            <intent-filter>
+                <action android:name="com.example.myapp.databinding.open"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
         </activity>
     </application>
 

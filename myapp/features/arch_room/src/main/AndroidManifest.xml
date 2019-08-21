@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="myapp.features.arch_room">
+
+    <application>
+        <activity android:name=".RoomNewWordActivity">
+        </activity>
+        <activity android:name=".RoomMainActivity">
+            <intent-filter>
+                <action android:name="com.example.myapp.room.open"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

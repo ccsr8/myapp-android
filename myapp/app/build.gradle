@@ -13,22 +13,38 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            // shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    dataBinding {
+        enabled true
     }
 }
 
 dependencies {
     implementation project(':features-login')
     implementation project(':features-dashboard')
+    implementation project(':features-arch_databinding')
+    implementation project(':features-arch_room')
 
     implementation project(':libraries-ui_components')
     implementation project(':libraries-actions')
 
-    implementation deps.kotlin_stdlib
-    implementation deps.androidx_appcompat
-    implementation deps.androidx_core_ktx
-    implementation deps.androidx_constraintlayout
+    implementation deps.kotlin.stdlib
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.coreKtx
+    implementation deps.androidx.constraintlayout
+
+    // Lifecycle
+    implementation deps.androidx.lifecycleExtensions
+    kapt deps.androidx.lifecycleCompiler
+    implementation deps.androidx.lifecycleViewmodel
+
+    // Room
+    implementation deps.androidx.roomRuntime
+    kapt deps.androidx.roomCompiler
+    implementation deps.androidx.roomKtx
 
     testImplementation deps.junit
 

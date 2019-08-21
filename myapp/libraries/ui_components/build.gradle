@@ -1,7 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 dependencies {
-    implementation deps.androidx_core_ktx
+    implementation deps.androidx.coreKtx
     testImplementation deps.junit
 }
