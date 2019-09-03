@@ -7,6 +7,6 @@ interface TasksDatasource {
 
     suspend fun getTasks(): Result<List<TaskEntity>>
 
-    suspend fun getTask(): Result<TaskEntity>
+    suspend fun getTask(taskId: String): Result<TaskEntity>
 
 }
