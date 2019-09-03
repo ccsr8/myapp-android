@@ -33,5 +33,12 @@ class TasksLocalDatasource internal constructor(
         }
     }
 
+    override suspend fun deleteAllTasks() = withContext(ioDispatcher) {
+        tasksDao.deleteTasks()
+    }
+
+    override suspend fun saveTask(task: TaskEntity) = withContext(ioDispatcher) {
+        tasksDao.insertTask(task)
+    }
 
 }

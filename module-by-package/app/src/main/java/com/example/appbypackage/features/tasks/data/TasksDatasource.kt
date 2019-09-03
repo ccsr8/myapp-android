@@ -9,4 +9,8 @@ interface TasksDatasource {
 
     suspend fun getTask(taskId: String): Result<TaskEntity>
 
+    suspend fun deleteAllTasks()
+
+    suspend fun saveTask(task: TaskEntity)
+
 }
