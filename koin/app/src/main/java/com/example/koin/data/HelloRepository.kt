@@ -1,4 +1,4 @@
-package com.example.koin
+package com.example.koin.data
 
 interface HelloRepository {
 
