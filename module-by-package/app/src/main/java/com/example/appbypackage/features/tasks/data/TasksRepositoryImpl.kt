@@ -13,8 +13,8 @@ import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ConcurrentMap
 
 class TasksRepositoryImpl(
-    private val tasksRemoteRepository: TasksRepository,
-    private val tasksLocalDatasource: TasksLocalDatasource,
+    private val tasksRemoteDataSource: TasksDatasource,
+    private val tasksLocalDatasource: TasksDatasource,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : TasksRepository {
 
@@ -28,9 +28,27 @@ class TasksRepositoryImpl(
                 }
             }
 
-            val newTask = fetchTasksFromRemoteOrLocal(forceUpdate)
+            val newTasks = fetchTasksFromRemoteOrLocal(forceUpdate)
 
-            (newTask as? Result.Success)?.let { refreshCache(it.data) }
+            (newTasks as? Result.Success)?.let { refreshCache(it.data) }
+
+            cachedTasks?.values?.let { tasks ->
+                return@withContext Result.Success(tasks.sortedBy { it.id })
+            }
+
+            (newTasks as? Result.Success)?.let {
+                if (it.data.isEmpty()){
+                    return@withContext Result.Success(it.data)
+                }
+            }
+
+            return@withContext Error(Exception("Illegal state"))
+        }
+    }
+
+    override suspend fun getTask(taskId: String, forceUpdate: Boolean): Result<TaskEntity> {
+        return withContext(ioDispatcher){
+
         }
     }
 
