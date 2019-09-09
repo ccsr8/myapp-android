@@ -36,7 +36,7 @@ class TasksRepositoryImpl(
             }
 
             (newTasks as? Result.Success)?.let {
-                if (it.data.isEmpty()){
+                if (it.data.isEmpty()) {
                     return@withContext Result.Success(it.data)
                 }
             }
@@ -46,8 +46,8 @@ class TasksRepositoryImpl(
     }
 
     override suspend fun getTask(taskId: String, forceUpdate: Boolean): Result<TaskEntity> {
-        return withContext(ioDispatcher){
-            if (!forceUpdate){
+        return withContext(ioDispatcher) {
+            if (!forceUpdate) {
                 getTaskWithId(taskId)?.let {
                     return@withContext Result.Success(it)
                 }
@@ -64,9 +64,10 @@ class TasksRepositoryImpl(
 
     private suspend fun fetchTaskFromRemoteOrLocal(
         taskId: String,
-        forceUpdate: Boolean): Result<TaskEntity>{
+        forceUpdate: Boolean
+    ): Result<TaskEntity> {
         val remoteTask = tasksRemoteDataSource.getTask(taskId)
-        when(remoteTask){
+        when (remoteTask) {
             is Result.Error -> Timber.w("Remote data source fetch failed")
             is Result.Success -> {
                 refreshLocalDataSource(remoteTask.data)
@@ -75,7 +76,7 @@ class TasksRepositoryImpl(
             else -> throw IllegalStateException()
         }
 
-        if(forceUpdate){
+        if (forceUpdate) {
             return Result.Error(Exception("Refresh failed"))
         }
 
@@ -117,7 +118,7 @@ class TasksRepositoryImpl(
         }
     }
 
-    private suspend fun refreshLocalDataSource(task: TaskEntity){
+    private suspend fun refreshLocalDataSource(task: TaskEntity) {
         tasksLocalDatasource.saveTask(task)
     }
 
