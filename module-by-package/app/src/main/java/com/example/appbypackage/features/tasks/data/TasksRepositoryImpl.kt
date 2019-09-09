@@ -7,10 +7,9 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import java.lang.Error
-import java.lang.IllegalStateException
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ConcurrentMap
+import kotlin.IllegalStateException
 
 class TasksRepositoryImpl(
     private val tasksRemoteDataSource: TasksDatasource,
@@ -42,23 +41,55 @@ class TasksRepositoryImpl(
                 }
             }
 
-            return@withContext Error(Exception("Illegal state"))
+            return@withContext Result.Error(Exception("Illegal state"))
         }
     }
 
     override suspend fun getTask(taskId: String, forceUpdate: Boolean): Result<TaskEntity> {
         return withContext(ioDispatcher){
+            if (!forceUpdate){
+                getTaskWithId(taskId)?.let {
+                    return@withContext Result.Success(it)
+                }
+            }
 
+            val newTask = fetchTaskFromRemoteOrLocal(taskId, forceUpdate)
+            (newTask as? Result.Success)?.let { cacheTask((it.data)) }
+
+            return@withContext newTask
         }
     }
 
     //region [private members]
 
+    private suspend fun fetchTaskFromRemoteOrLocal(
+        taskId: String,
+        forceUpdate: Boolean): Result<TaskEntity>{
+        val remoteTask = tasksRemoteDataSource.getTask(taskId)
+        when(remoteTask){
+            is Result.Error -> Timber.w("Remote data source fetch failed")
+            is Result.Success -> {
+                refreshLocalDataSource(remoteTask.data)
+                return remoteTask
+            }
+            else -> throw IllegalStateException()
+        }
+
+        if(forceUpdate){
+            return Result.Error(Exception("Refresh failed"))
+        }
+
+        val localTasks = this.tasksLocalDatasource.getTask(taskId)
+        if (localTasks is Result.Success) return localTasks
+
+        return Result.Error(Exception("Error fetching from remote and local"))
+    }
+
     private suspend fun fetchTasksFromRemoteOrLocal(forceUpdate: Boolean): Result<List<TaskEntity>> {
         // Remote first
-        val remoteTasks = this.tasksRemoteRepository.getTasks()
+        val remoteTasks = this.tasksRemoteDataSource.getTasks()
         when (remoteTasks) {
-            is Error -> Timber.w("Remote data source fetch failed")
+            is Result.Error -> Timber.w("Remote data source fetch failed")
             is Result.Success -> {
                 this.refreshLocalDataSource(remoteTasks.data)
                 return remoteTasks
@@ -86,6 +117,10 @@ class TasksRepositoryImpl(
         }
     }
 
+    private suspend fun refreshLocalDataSource(task: TaskEntity){
+        tasksLocalDatasource.saveTask(task)
+    }
+
     private fun refreshCache(tasks: List<TaskEntity>) {
         this.cachedTasks?.clear()
         tasks.sortedBy { it.id }.forEach {
@@ -107,6 +142,8 @@ class TasksRepositoryImpl(
         val cachedTask = cacheTask(task)
         perform(cachedTask)
     }
+
+    private fun getTaskWithId(id: String) = cachedTasks?.get(id)
 
 
     //endregion
