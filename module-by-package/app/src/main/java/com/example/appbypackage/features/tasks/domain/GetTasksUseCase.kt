@@ -17,9 +17,23 @@ class GetTasksUseCase(
         if (tasksResult is Result.Success && currentFiltering != TasksFilterType.ALL_TASKS) {
             val tasks = tasksResult.data
 
-            // TODO: taskToShow
+            var tasksToShow = mutableListOf<TaskEntity>()
+            for (task in tasks) {
+                when (currentFiltering) {
+                    TasksFilterType.ACTIVE_TASKS -> if (task.isActive) {
+                        tasksToShow.add(task)
+                    }
+                    TasksFilterType.COMPLETED_TASKS -> if (task.isCompleted) {
+                        tasksToShow.add(task)
+                    }
+                    else -> NotImplementedError()
+                }
+            }
+
+            return Result.Success(tasksToShow)
         }
 
+        return tasksResult
 
     }
 }
