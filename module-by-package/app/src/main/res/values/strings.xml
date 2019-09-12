@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application - Package</string>
+    <string name="title_activity_tasks">TasksActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
